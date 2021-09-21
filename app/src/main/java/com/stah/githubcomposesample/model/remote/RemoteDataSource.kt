@@ -13,8 +13,7 @@ class RemoteDataSourceImpl @Inject constructor(
     override suspend fun getGitHubUser(userName: String): GithubUser {
         val response = apiClient.getGitHubUser(userName = userName)
         if (response.isSuccessful) {
-            val githubUser = requireNotNull(response.body())
-            return githubUser
+            return requireNotNull(response.body())
         }
         throw HttpException()
     }
