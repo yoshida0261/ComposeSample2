@@ -42,9 +42,7 @@ class ApiClientProvider @Inject constructor() {
         return Retrofit.Builder()
             .baseUrl(API_END_POINT)
             .addConverterFactory(
-                Json {
-                    ignoreUnknownKeys = true
-                }.asConverterFactory(
+                Json { ignoreUnknownKeys = true }.asConverterFactory(
                     "application/json".toMediaType()
                 ),
             )

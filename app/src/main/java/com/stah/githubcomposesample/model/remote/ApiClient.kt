@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiClient {
-    @GET("user/{username}")
+    @GET("users/{username}")
     suspend fun getGitHubUser(@Path("username") userName: String): Response<GithubUser>
 }
